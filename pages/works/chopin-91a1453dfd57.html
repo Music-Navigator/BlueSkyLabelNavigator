@@ -8,15 +8,11 @@
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
     .recording-list { display: grid; gap: 1rem; margin: 0; }
-    .recording-card { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; padding: 1rem; border: 1px solid #ddd; border-radius: 0.3rem; }
+    .recording-card { display: block; padding: 1rem; border: 1px solid #ddd; border-radius: 0.3rem; }
     .recording-jacket img { display: block; width: 110px; aspect-ratio: 1 / 1; object-fit: cover; }
     .recording-body h2 { margin: 0 0 0.4rem; font-size: 1.05rem; }
     .recording-body p { margin: 0.25rem 0; }
     .recording-link { display: inline-block; margin-top: 0.7rem; }
-    @media (max-width: 560px) {
-      .recording-card { grid-template-columns: 80px 1fr; }
-      .recording-jacket img { width: 80px; }
-    }
   </style>
 </head>
 <body>
