@@ -1,0 +1,1642 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="BlueSkyLabel Navigatorの作曲家ページ確認用一覧。">
+  <title>作曲家一覧｜BlueSkyLabel Navigator</title>
+  <link rel="stylesheet" href="../../assets/css/site.css">
+  <style>
+    .composer-index-tools {
+      margin: 2rem 0;
+    }
+
+    .composer-search {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid #b8b8b8;
+      border-radius: 0.25rem;
+      font: inherit;
+    }
+
+    .composer-count {
+      margin-top: 0.75rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .composer-index-list {
+      display: grid;
+      grid-template-columns:
+        repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.75rem 1.25rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .composer-item a {
+      display: block;
+      padding: 0.9rem 1rem;
+      border: 1px solid #dedede;
+      border-radius: 0.25rem;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .composer-item a:hover,
+    .composer-item a:focus-visible {
+      border-color: #777;
+      background: #f5f5f5;
+    }
+
+    .composer-name-ja {
+      display: block;
+      font-weight: 600;
+    }
+
+    .composer-name-en {
+      display: block;
+      margin-top: 0.2rem;
+      color: #777;
+      font-size: 0.82rem;
+    }
+
+    .composer-record-count {
+      display: block;
+      margin-top: 0.45rem;
+      color: #666;
+      font-size: 0.82rem;
+    }
+
+    .composer-item[hidden] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="site-title" href="../../index.html">
+      BlueSkyLabel Navigator
+    </a>
+    <nav class="site-nav" aria-label="主要ナビゲーション">
+      <a href="../../index.html">トップ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="shell narrow">
+      <nav class="breadcrumb" aria-label="パンくず">
+        <a href="../../index.html">トップ</a>
+        <span>/</span>
+        <span>作曲家一覧</span>
+      </nav>
+
+      <p class="eyebrow">COMPOSERS</p>
+      <h1>作曲家一覧</h1>
+      <p>
+        Blue Sky Labelの登録音源が多い順に作曲家を掲載しています。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell narrow">
+      <div class="composer-index-tools">
+        <label for="composer-search">
+          作曲家名で検索
+        </label>
+        <input
+          id="composer-search"
+          class="composer-search"
+          type="search"
+          placeholder="例：バッハ、Vivaldi、シューベルト"
+          autocomplete="off">
+        <p class="composer-count">
+          表示中：
+          <span id="visible-count">105</span>
+          ／105人
+        </p>
+      </div>
+
+      <ul class="composer-index-list" id="composer-list">
+
+        <li class="composer-item"
+            data-search="ベートーヴェン ludwig van beethoven ベートーベン ベートーヴェン beethoven">
+          <a href="beethoven.html">
+            <span class="composer-name-ja">
+              ベートーヴェン
+            </span>
+            <span class="composer-name-en">
+              Ludwig van Beethoven
+            </span>
+            <span class="composer-record-count">
+              登録音源 1186件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="モーツァルト wolfgang amadeus mozart モーツァルト mozart">
+          <a href="mozart.html">
+            <span class="composer-name-ja">
+              モーツァルト
+            </span>
+            <span class="composer-name-en">
+              Wolfgang Amadeus Mozart
+            </span>
+            <span class="composer-record-count">
+              登録音源 774件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヨハン・ゼバスティアン・バッハ johann sebastian bach j.s.バッハ バッハ j.s/バッハ j.s.bach bach">
+          <a href="johann_sebastian_bach.html">
+            <span class="composer-name-ja">
+              ヨハン・ゼバスティアン・バッハ
+            </span>
+            <span class="composer-name-en">
+              Johann Sebastian Bach
+            </span>
+            <span class="composer-record-count">
+              登録音源 507件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ブラームス johannes brahms ブラームス brahms">
+          <a href="brahms.html">
+            <span class="composer-name-ja">
+              ブラームス
+            </span>
+            <span class="composer-name-en">
+              Johannes Brahms
+            </span>
+            <span class="composer-record-count">
+              登録音源 305件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="チャイコフスキー pyotr ilyich tchaikovsky チャイコフスキー tchaikovsky">
+          <a href="tchaikovsky.html">
+            <span class="composer-name-ja">
+              チャイコフスキー
+            </span>
+            <span class="composer-name-en">
+              Pyotr Ilyich Tchaikovsky
+            </span>
+            <span class="composer-record-count">
+              登録音源 223件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ハイドン joseph haydn ハイドン haydn">
+          <a href="haydn.html">
+            <span class="composer-name-ja">
+              ハイドン
+            </span>
+            <span class="composer-name-en">
+              Joseph Haydn
+            </span>
+            <span class="composer-record-count">
+              登録音源 190件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="シューベルト franz schubert シューベルト schubert">
+          <a href="schubert.html">
+            <span class="composer-name-ja">
+              シューベルト
+            </span>
+            <span class="composer-name-en">
+              Franz Schubert
+            </span>
+            <span class="composer-record-count">
+              登録音源 176件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ショパン frédéric chopin ショパン chopin">
+          <a href="chopin.html">
+            <span class="composer-name-ja">
+              ショパン
+            </span>
+            <span class="composer-name-en">
+              Frédéric Chopin
+            </span>
+            <span class="composer-record-count">
+              登録音源 162件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ドヴォルザーク antonín dvořák ドヴォルザーク dvorak">
+          <a href="dvorak.html">
+            <span class="composer-name-ja">
+              ドヴォルザーク
+            </span>
+            <span class="composer-name-en">
+              Antonín Dvořák
+            </span>
+            <span class="composer-record-count">
+              登録音源 135件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヘンデル george frideric handel ヘンデル handel">
+          <a href="handel.html">
+            <span class="composer-name-ja">
+              ヘンデル
+            </span>
+            <span class="composer-name-en">
+              George Frideric Handel
+            </span>
+            <span class="composer-record-count">
+              登録音源 109件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="シューマン robert schumann シューマン schumann">
+          <a href="schumann.html">
+            <span class="composer-name-ja">
+              シューマン
+            </span>
+            <span class="composer-name-en">
+              Robert Schumann
+            </span>
+            <span class="composer-record-count">
+              登録音源 102件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ワーグナー richard wagner ワーグナー wagner">
+          <a href="wagner.html">
+            <span class="composer-name-ja">
+              ワーグナー
+            </span>
+            <span class="composer-name-en">
+              Richard Wagner
+            </span>
+            <span class="composer-record-count">
+              登録音源 95件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="シベリウス jean sibelius シベリウス sibelius">
+          <a href="sibelius.html">
+            <span class="composer-name-ja">
+              シベリウス
+            </span>
+            <span class="composer-name-en">
+              Jean Sibelius
+            </span>
+            <span class="composer-record-count">
+              登録音源 85件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ラヴェル maurice ravel ラヴェル ravel">
+          <a href="ravel.html">
+            <span class="composer-name-ja">
+              ラヴェル
+            </span>
+            <span class="composer-name-en">
+              Maurice Ravel
+            </span>
+            <span class="composer-record-count">
+              登録音源 82件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="メンデルスゾーン felix mendelssohn メンデルスゾーン mendelssohn">
+          <a href="mendelssohn.html">
+            <span class="composer-name-ja">
+              メンデルスゾーン
+            </span>
+            <span class="composer-name-en">
+              Felix Mendelssohn
+            </span>
+            <span class="composer-record-count">
+              登録音源 81件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="バルトーク béla bartók バルトーク ベーラ・バルトーク bartok">
+          <a href="bartok.html">
+            <span class="composer-name-ja">
+              バルトーク
+            </span>
+            <span class="composer-name-en">
+              Béla Bartók
+            </span>
+            <span class="composer-record-count">
+              登録音源 73件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="リヒャルト・シュトラウス richard strauss r.シュトラウス リヒャルト・シュトラウス リヒャルト.シュトラウス richard strauss">
+          <a href="richard_strauss.html">
+            <span class="composer-name-ja">
+              リヒャルト・シュトラウス
+            </span>
+            <span class="composer-name-en">
+              Richard Strauss
+            </span>
+            <span class="composer-record-count">
+              登録音源 73件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ブルックナー anton bruckner ブルックナー bruckner">
+          <a href="bruckner.html">
+            <span class="composer-name-ja">
+              ブルックナー
+            </span>
+            <span class="composer-name-en">
+              Anton Bruckner
+            </span>
+            <span class="composer-record-count">
+              登録音源 66件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ドビュッシー claude debussy ドビュッシー debussy">
+          <a href="debussy.html">
+            <span class="composer-name-ja">
+              ドビュッシー
+            </span>
+            <span class="composer-name-en">
+              Claude Debussy
+            </span>
+            <span class="composer-record-count">
+              登録音源 61件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="リスト franz liszt リスト liszt">
+          <a href="liszt.html">
+            <span class="composer-name-ja">
+              リスト
+            </span>
+            <span class="composer-name-en">
+              Franz Liszt
+            </span>
+            <span class="composer-record-count">
+              登録音源 61件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヴィヴァルディ antonio vivaldi ヴィヴァルディ vivaldi">
+          <a href="vivaldi.html">
+            <span class="composer-name-ja">
+              ヴィヴァルディ
+            </span>
+            <span class="composer-name-en">
+              Antonio Vivaldi
+            </span>
+            <span class="composer-record-count">
+              登録音源 61件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="マーラー gustav mahler マーラー mahler">
+          <a href="mahler.html">
+            <span class="composer-name-ja">
+              マーラー
+            </span>
+            <span class="composer-name-en">
+              Gustav Mahler
+            </span>
+            <span class="composer-record-count">
+              登録音源 59件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ラフマニノフ sergei rachmaninoff ラフマニノフ rachmaninoff rachmaninov rachmaninow">
+          <a href="rachmaninoff.html">
+            <span class="composer-name-ja">
+              ラフマニノフ
+            </span>
+            <span class="composer-name-en">
+              Sergei Rachmaninoff
+            </span>
+            <span class="composer-record-count">
+              登録音源 56件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="リムスキー＝コルサコフ nikolai rimsky-korsakov リムスキー=コルサコフ r.コルサコフ リムスキー・コルサコフ rimsky-korsakov">
+          <a href="rimsky_korsakov.html">
+            <span class="composer-name-ja">
+              リムスキー＝コルサコフ
+            </span>
+            <span class="composer-name-en">
+              Nikolai Rimsky-Korsakov
+            </span>
+            <span class="composer-record-count">
+              登録音源 43件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヨハン・シュトラウス2世 johann strauss ii ヨハン・シュトラウス2世 ヨハン・シュトラウス ii ヨハン・シュトラウス j.シュトラウスii世 ヨハン・シュトラウス?世 johann strauss johann strauss ii">
+          <a href="johann_strauss_ii.html">
+            <span class="composer-name-ja">
+              ヨハン・シュトラウス2世
+            </span>
+            <span class="composer-name-en">
+              Johann Strauss II
+            </span>
+            <span class="composer-record-count">
+              登録音源 35件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ビゼー georges bizet ビゼー bizet">
+          <a href="bizet.html">
+            <span class="composer-name-ja">
+              ビゼー
+            </span>
+            <span class="composer-name-en">
+              Georges Bizet
+            </span>
+            <span class="composer-record-count">
+              登録音源 34件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="グリーグ edvard grieg グリーグ grieg">
+          <a href="grieg.html">
+            <span class="composer-name-ja">
+              グリーグ
+            </span>
+            <span class="composer-name-en">
+              Edvard Grieg
+            </span>
+            <span class="composer-record-count">
+              登録音源 33件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="サン＝サーンス camille saint-saëns サン=サーンス saint-saens saint-saëns">
+          <a href="saint_saens.html">
+            <span class="composer-name-ja">
+              サン＝サーンス
+            </span>
+            <span class="composer-name-en">
+              Camille Saint-Saëns
+            </span>
+            <span class="composer-record-count">
+              登録音源 32件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="テレマン georg philipp telemann テレマン telemann">
+          <a href="telemann.html">
+            <span class="composer-name-ja">
+              テレマン
+            </span>
+            <span class="composer-name-en">
+              Georg Philipp Telemann
+            </span>
+            <span class="composer-record-count">
+              登録音源 32件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="エルガー edward elgar エルガー elgar">
+          <a href="elgar.html">
+            <span class="composer-name-ja">
+              エルガー
+            </span>
+            <span class="composer-name-en">
+              Edward Elgar
+            </span>
+            <span class="composer-record-count">
+              登録音源 31件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="フォーレ gabriel fauré フォーレ faure">
+          <a href="faure.html">
+            <span class="composer-name-ja">
+              フォーレ
+            </span>
+            <span class="composer-name-en">
+              Gabriel Fauré
+            </span>
+            <span class="composer-record-count">
+              登録音源 29件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ベルリオーズ hector berlioz ベルリオーズ berlioz">
+          <a href="berlioz.html">
+            <span class="composer-name-ja">
+              ベルリオーズ
+            </span>
+            <span class="composer-name-en">
+              Hector Berlioz
+            </span>
+            <span class="composer-record-count">
+              登録音源 29件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="フランク césar franck フランク franck">
+          <a href="franck.html">
+            <span class="composer-name-ja">
+              フランク
+            </span>
+            <span class="composer-name-en">
+              César Franck
+            </span>
+            <span class="composer-record-count">
+              登録音源 28件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="プロコフィエフ sergei prokofiev プロコフィエフ セルゲイ・プロコフィエフ prokofiev">
+          <a href="prokofiev.html">
+            <span class="composer-name-ja">
+              プロコフィエフ
+            </span>
+            <span class="composer-name-en">
+              Sergei Prokofiev
+            </span>
+            <span class="composer-record-count">
+              登録音源 27件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="レスピーギ ottorino respighi レスピーギ respighi">
+          <a href="respighi.html">
+            <span class="composer-name-ja">
+              レスピーギ
+            </span>
+            <span class="composer-name-en">
+              Ottorino Respighi
+            </span>
+            <span class="composer-record-count">
+              登録音源 24件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ロッシーニ gioachino rossini ロッシーニ rossini">
+          <a href="rossini.html">
+            <span class="composer-name-ja">
+              ロッシーニ
+            </span>
+            <span class="composer-name-en">
+              Gioachino Rossini
+            </span>
+            <span class="composer-record-count">
+              登録音源 24件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ムソルグスキー modest mussorgsky ムソルグスキー ムソソルグスキー mussorgsky">
+          <a href="mussorgsky.html">
+            <span class="composer-name-ja">
+              ムソルグスキー
+            </span>
+            <span class="composer-name-en">
+              Modest Mussorgsky
+            </span>
+            <span class="composer-record-count">
+              登録音源 23件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="レイフ・ヴォーン・ウィリアムズ ralph vaughan williams レイフ・ヴォーン・ウィリアムズ ヴォーン・ウィリアムズ ヴォーン・ウィリアムス ralph vaughan williams vaughan williams">
+          <a href="vaughan_williams.html">
+            <span class="composer-name-ja">
+              レイフ・ヴォーン・ウィリアムズ
+            </span>
+            <span class="composer-name-en">
+              Ralph Vaughan Williams
+            </span>
+            <span class="composer-record-count">
+              登録音源 23件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ブルッフ max bruch ブルッフ bruch">
+          <a href="bruch.html">
+            <span class="composer-name-ja">
+              ブルッフ
+            </span>
+            <span class="composer-name-en">
+              Max Bruch
+            </span>
+            <span class="composer-record-count">
+              登録音源 22件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="スメタナ bedřich smetana スメタナ smetana">
+          <a href="smetana.html">
+            <span class="composer-name-ja">
+              スメタナ
+            </span>
+            <span class="composer-name-en">
+              Bedřich Smetana
+            </span>
+            <span class="composer-record-count">
+              登録音源 21件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="コダーイ zoltán kodály コダーイ kodaly zoltan kodaly">
+          <a href="kodaly.html">
+            <span class="composer-name-ja">
+              コダーイ
+            </span>
+            <span class="composer-name-en">
+              Zoltán Kodály
+            </span>
+            <span class="composer-record-count">
+              登録音源 18件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ウェーバー carl maria von weber ウェーバー weber">
+          <a href="weber.html">
+            <span class="composer-name-ja">
+              ウェーバー
+            </span>
+            <span class="composer-name-en">
+              Carl Maria von Weber
+            </span>
+            <span class="composer-record-count">
+              登録音源 17件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ラロ édouard lalo ラロ lalo">
+          <a href="lalo.html">
+            <span class="composer-name-ja">
+              ラロ
+            </span>
+            <span class="composer-name-en">
+              Édouard Lalo
+            </span>
+            <span class="composer-record-count">
+              登録音源 16件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ガーシュイン george gershwin ガーシュイン ガーシュウィン gershwin">
+          <a href="gershwin.html">
+            <span class="composer-name-ja">
+              ガーシュイン
+            </span>
+            <span class="composer-name-en">
+              George Gershwin
+            </span>
+            <span class="composer-record-count">
+              登録音源 14件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="パガニーニ niccolò paganini パガニーニ paganini">
+          <a href="paganini.html">
+            <span class="composer-name-ja">
+              パガニーニ
+            </span>
+            <span class="composer-name-en">
+              Niccolò Paganini
+            </span>
+            <span class="composer-record-count">
+              登録音源 14件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="コレッリ arcangelo corelli コレッリ corelli">
+          <a href="corelli.html">
+            <span class="composer-name-ja">
+              コレッリ
+            </span>
+            <span class="composer-name-en">
+              Arcangelo Corelli
+            </span>
+            <span class="composer-record-count">
+              登録音源 13件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="シェーンベルク arnold schoenberg シェーンベルク schoenberg">
+          <a href="schoenberg.html">
+            <span class="composer-name-ja">
+              シェーンベルク
+            </span>
+            <span class="composer-name-en">
+              Arnold Schoenberg
+            </span>
+            <span class="composer-record-count">
+              登録音源 13件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ショーソン ernest chausson ショーソン chausson">
+          <a href="chausson.html">
+            <span class="composer-name-ja">
+              ショーソン
+            </span>
+            <span class="composer-name-en">
+              Ernest Chausson
+            </span>
+            <span class="composer-record-count">
+              登録音源 12件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ボロディン alexander borodin ボロディン borodin">
+          <a href="borodin.html">
+            <span class="composer-name-ja">
+              ボロディン
+            </span>
+            <span class="composer-name-en">
+              Alexander Borodin
+            </span>
+            <span class="composer-record-count">
+              登録音源 12件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="スッペ franz von suppé スッペ suppe suppé">
+          <a href="suppe.html">
+            <span class="composer-name-ja">
+              スッペ
+            </span>
+            <span class="composer-name-en">
+              Franz von Suppé
+            </span>
+            <span class="composer-record-count">
+              登録音源 11件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="プッチーニ giacomo puccini プッチーニ puccini">
+          <a href="puccini.html">
+            <span class="composer-name-ja">
+              プッチーニ
+            </span>
+            <span class="composer-name-en">
+              Giacomo Puccini
+            </span>
+            <span class="composer-record-count">
+              登録音源 11件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="オッフェンバック jacques offenbach オッフェンバック offenbach">
+          <a href="offenbach.html">
+            <span class="composer-name-ja">
+              オッフェンバック
+            </span>
+            <span class="composer-name-en">
+              Jacques Offenbach
+            </span>
+            <span class="composer-record-count">
+              登録音源 10件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="タルティーニ giuseppe tartini タルティーニ tartini">
+          <a href="tartini.html">
+            <span class="composer-name-ja">
+              タルティーニ
+            </span>
+            <span class="composer-name-en">
+              Giuseppe Tartini
+            </span>
+            <span class="composer-record-count">
+              登録音源 10件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ディーリアス frederick delius ディーリアス delius">
+          <a href="delius.html">
+            <span class="composer-name-ja">
+              ディーリアス
+            </span>
+            <span class="composer-name-en">
+              Frederick Delius
+            </span>
+            <span class="composer-record-count">
+              登録音源 10件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="グラナドス enrique granados グラナドス granados">
+          <a href="granados.html">
+            <span class="composer-name-ja">
+              グラナドス
+            </span>
+            <span class="composer-name-en">
+              Enrique Granados
+            </span>
+            <span class="composer-record-count">
+              登録音源 8件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="サティ erik satie サティ satie">
+          <a href="satie.html">
+            <span class="composer-name-ja">
+              サティ
+            </span>
+            <span class="composer-name-en">
+              Erik Satie
+            </span>
+            <span class="composer-record-count">
+              登録音源 8件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヤナーチェク leoš janáček ヤナーチェク janacek janáček">
+          <a href="janacek.html">
+            <span class="composer-name-ja">
+              ヤナーチェク
+            </span>
+            <span class="composer-name-en">
+              Leoš Janáček
+            </span>
+            <span class="composer-record-count">
+              登録音源 8件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヴェルディ giuseppe verdi ヴェルディ verdi">
+          <a href="verdi.html">
+            <span class="composer-name-ja">
+              ヴェルディ
+            </span>
+            <span class="composer-name-en">
+              Giuseppe Verdi
+            </span>
+            <span class="composer-record-count">
+              登録音源 8件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ホルスト gustav holst ホルスト holst">
+          <a href="holst.html">
+            <span class="composer-name-ja">
+              ホルスト
+            </span>
+            <span class="composer-name-en">
+              Gustav Holst
+            </span>
+            <span class="composer-record-count">
+              登録音源 7件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヴィエニャフスキ henryk wieniawski ヴィエニャフスキ wieniawski">
+          <a href="wieniawski.html">
+            <span class="composer-name-ja">
+              ヴィエニャフスキ
+            </span>
+            <span class="composer-name-en">
+              Henryk Wieniawski
+            </span>
+            <span class="composer-record-count">
+              登録音源 7件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ダンディ vincent d&#x27;indy ダンディ ヴァンサン・ダンディ d&#x27;indy d&#x27;indy">
+          <a href="dindy.html">
+            <span class="composer-name-ja">
+              ダンディ
+            </span>
+            <span class="composer-name-en">
+              Vincent d&#x27;Indy
+            </span>
+            <span class="composer-record-count">
+              登録音源 6件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ボッケリーニ luigi boccherini ボッケリーニ boccherini">
+          <a href="boccherini.html">
+            <span class="composer-name-ja">
+              ボッケリーニ
+            </span>
+            <span class="composer-name-en">
+              Luigi Boccherini
+            </span>
+            <span class="composer-record-count">
+              登録音源 6件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="グラズノフ alexander glazunov グラズノフ glazunov">
+          <a href="glazunov.html">
+            <span class="composer-name-ja">
+              グラズノフ
+            </span>
+            <span class="composer-name-en">
+              Alexander Glazunov
+            </span>
+            <span class="composer-record-count">
+              登録音源 5件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="サラサーテ pablo de sarasate サラサーテ sarasate">
+          <a href="sarasate.html">
+            <span class="composer-name-ja">
+              サラサーテ
+            </span>
+            <span class="composer-name-en">
+              Pablo de Sarasate
+            </span>
+            <span class="composer-record-count">
+              登録音源 5件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="バラキレフ mily balakirev バラキレフ ミリイ・バラキレフ balakirev">
+          <a href="balakirev.html">
+            <span class="composer-name-ja">
+              バラキレフ
+            </span>
+            <span class="composer-name-en">
+              Mily Balakirev
+            </span>
+            <span class="composer-record-count">
+              登録音源 5件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヒンデミット paul hindemith ヒンデミット パウル・ヒンデミット hindemith paul hindemith">
+          <a href="hindemith.html">
+            <span class="composer-name-ja">
+              ヒンデミット
+            </span>
+            <span class="composer-name-en">
+              Paul Hindemith
+            </span>
+            <span class="composer-record-count">
+              登録音源 5件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ファリャ manuel de falla ファリャ falla manuel de falla">
+          <a href="falla.html">
+            <span class="composer-name-ja">
+              ファリャ
+            </span>
+            <span class="composer-name-en">
+              Manuel de Falla
+            </span>
+            <span class="composer-record-count">
+              登録音源 5件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ラモー jean-philippe rameau ラモー rameau">
+          <a href="rameau.html">
+            <span class="composer-name-ja">
+              ラモー
+            </span>
+            <span class="composer-name-en">
+              Jean-Philippe Rameau
+            </span>
+            <span class="composer-record-count">
+              登録音源 5件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ワルトトイフェル émile waldteufel ワルトトイフェル waldteufel">
+          <a href="waldteufel.html">
+            <span class="composer-name-ja">
+              ワルトトイフェル
+            </span>
+            <span class="composer-name-en">
+              Émile Waldteufel
+            </span>
+            <span class="composer-record-count">
+              登録音源 5件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="アルベニス isaac albéniz アルベニス albeniz albéniz">
+          <a href="albeniz.html">
+            <span class="composer-name-ja">
+              アルベニス
+            </span>
+            <span class="composer-name-en">
+              Isaac Albéniz
+            </span>
+            <span class="composer-record-count">
+              登録音源 4件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="グリンカ mikhail glinka グリンカ glinka">
+          <a href="glinka.html">
+            <span class="composer-name-ja">
+              グリンカ
+            </span>
+            <span class="composer-name-en">
+              Mikhail Glinka
+            </span>
+            <span class="composer-record-count">
+              登録音源 4件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="グルック christoph willibald gluck グルック gluck">
+          <a href="gluck.html">
+            <span class="composer-name-ja">
+              グルック
+            </span>
+            <span class="composer-name-en">
+              Christoph Willibald Gluck
+            </span>
+            <span class="composer-record-count">
+              登録音源 4件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ドリーブ léo delibes ドリーブ delibes">
+          <a href="delibes.html">
+            <span class="composer-name-ja">
+              ドリーブ
+            </span>
+            <span class="composer-name-en">
+              Léo Delibes
+            </span>
+            <span class="composer-record-count">
+              登録音源 4件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ベルク alban berg ベルク berg alban berg">
+          <a href="berg.html">
+            <span class="composer-name-ja">
+              ベルク
+            </span>
+            <span class="composer-name-en">
+              Alban Berg
+            </span>
+            <span class="composer-record-count">
+              登録音源 4件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ベルワルド franz berwald ベルワルド berwald">
+          <a href="berwald.html">
+            <span class="composer-name-ja">
+              ベルワルド
+            </span>
+            <span class="composer-name-en">
+              Franz Berwald
+            </span>
+            <span class="composer-record-count">
+              登録音源 4件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヴィターリ tomaso antonio vitali ヴィターリ vitali">
+          <a href="vitali.html">
+            <span class="composer-name-ja">
+              ヴィターリ
+            </span>
+            <span class="composer-name-en">
+              Tomaso Antonio Vitali
+            </span>
+            <span class="composer-record-count">
+              登録音源 4件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="カリンニコフ vasily kalinnikov カリンニコフ kalinnikov">
+          <a href="kalinnikov.html">
+            <span class="composer-name-ja">
+              カリンニコフ
+            </span>
+            <span class="composer-name-en">
+              Vasily Kalinnikov
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="クレメンティ muzio clementi クレメンティ clementi">
+          <a href="clementi.html">
+            <span class="composer-name-ja">
+              クレメンティ
+            </span>
+            <span class="composer-name-en">
+              Muzio Clementi
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="グノー charles gounod グノー gounod">
+          <a href="gounod.html">
+            <span class="composer-name-ja">
+              グノー
+            </span>
+            <span class="composer-name-en">
+              Charles Gounod
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="シャブリエ emmanuel chabrier シャブリエ chabrier">
+          <a href="chabrier.html">
+            <span class="composer-name-ja">
+              シャブリエ
+            </span>
+            <span class="composer-name-en">
+              Emmanuel Chabrier
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="パッヘルベル johann pachelbel パッヘルベル pachelbel">
+          <a href="pachelbel.html">
+            <span class="composer-name-ja">
+              パッヘルベル
+            </span>
+            <span class="composer-name-en">
+              Johann Pachelbel
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ブゾーニ ferruccio busoni ブゾーニ busoni">
+          <a href="busoni.html">
+            <span class="composer-name-ja">
+              ブゾーニ
+            </span>
+            <span class="composer-name-en">
+              Ferruccio Busoni
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ペルゴレージ giovanni battista pergolesi ペルゴレージ pergolesi">
+          <a href="pergolesi.html">
+            <span class="composer-name-ja">
+              ペルゴレージ
+            </span>
+            <span class="composer-name-en">
+              Giovanni Battista Pergolesi
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ポンキエッリ amilcare ponchielli ポンキエッリ ponchielli">
+          <a href="ponchielli.html">
+            <span class="composer-name-ja">
+              ポンキエッリ
+            </span>
+            <span class="composer-name-en">
+              Amilcare Ponchielli
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="マスネ jules massenet マスネ massenet">
+          <a href="massenet.html">
+            <span class="composer-name-ja">
+              マスネ
+            </span>
+            <span class="composer-name-en">
+              Jules Massenet
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ヨゼフ・スーク josef suk スーク ヨゼフ・スーク suk josef suk">
+          <a href="josef_suk.html">
+            <span class="composer-name-ja">
+              ヨゼフ・スーク
+            </span>
+            <span class="composer-name-en">
+              Josef Suk
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="リリ・ブーランジェ lili boulanger リリ・ブーランジェ boulanger lili boulanger">
+          <a href="lili_boulanger.html">
+            <span class="composer-name-ja">
+              リリ・ブーランジェ
+            </span>
+            <span class="composer-name-en">
+              Lili Boulanger
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ルーセル albert roussel ルーセル roussel">
+          <a href="roussel.html">
+            <span class="composer-name-ja">
+              ルーセル
+            </span>
+            <span class="composer-name-en">
+              Albert Roussel
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="レハール franz lehár レハール lehar lehár">
+          <a href="lehar.html">
+            <span class="composer-name-ja">
+              レハール
+            </span>
+            <span class="composer-name-en">
+              Franz Lehár
+            </span>
+            <span class="composer-record-count">
+              登録音源 3件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="アントン・ウェーベルン anton webern ウェーベルン ヴェーベルン webern anton webern">
+          <a href="webern.html">
+            <span class="composer-name-ja">
+              アントン・ウェーベルン
+            </span>
+            <span class="composer-name-en">
+              Anton Webern
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="アンリ・ヴュータン henri vieuxtemps ヴュータン vieuxtemps henri vieuxtemps">
+          <a href="vieuxtemps.html">
+            <span class="composer-name-ja">
+              アンリ・ヴュータン
+            </span>
+            <span class="composer-name-en">
+              Henri Vieuxtemps
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ウジェーヌ・イザイ eugène ysaÿe イザイ ウジェーヌ・イザイ eugene ysaye eugène ysaÿe ysaye">
+          <a href="eugene_ysaye.html">
+            <span class="composer-name-ja">
+              ウジェーヌ・イザイ
+            </span>
+            <span class="composer-name-en">
+              Eugène Ysaÿe
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="カール・フィリップ・エマヌエル・バッハ carl philipp emanuel bach カール・フィリップ・エマヌエル・バッハ carl philipp emanuel bach c.p.e. bach c.p.e.bach">
+          <a href="carl_philipp_emanuel_bach.html">
+            <span class="composer-name-ja">
+              カール・フィリップ・エマヌエル・バッハ
+            </span>
+            <span class="composer-name-en">
+              Carl Philipp Emanuel Bach
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ケルビーニ luigi cherubini ケルビーニ cherubini">
+          <a href="cherubini.html">
+            <span class="composer-name-ja">
+              ケルビーニ
+            </span>
+            <span class="composer-name-en">
+              Luigi Cherubini
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ジョヴァンニ・バッティスタ・ヴィオッティ giovanni battista viotti ヴィオッティ viotti giovanni battista viotti">
+          <a href="viotti.html">
+            <span class="composer-name-ja">
+              ジョヴァンニ・バッティスタ・ヴィオッティ
+            </span>
+            <span class="composer-name-en">
+              Giovanni Battista Viotti
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="チャールズ・アイヴズ charles ives チャールズ・アイヴズ charles ives ives">
+          <a href="charles_ives.html">
+            <span class="composer-name-ja">
+              チャールズ・アイヴズ
+            </span>
+            <span class="composer-name-en">
+              Charles Ives
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ニコライ・ミャスコフスキー nikolai myaskovsky ミャスコフスキー myaskovsky nikolai myaskovsky">
+          <a href="myaskovsky.html">
+            <span class="composer-name-ja">
+              ニコライ・ミャスコフスキー
+            </span>
+            <span class="composer-name-en">
+              Nikolai Myaskovsky
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ピエトロ・マスカーニ pietro mascagni マスカーニ mascagni pietro mascagni">
+          <a href="mascagni.html">
+            <span class="composer-name-ja">
+              ピエトロ・マスカーニ
+            </span>
+            <span class="composer-name-en">
+              Pietro Mascagni
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ポール・デュカス paul dukas デュカス dukas paul dukas">
+          <a href="dukas.html">
+            <span class="composer-name-ja">
+              ポール・デュカス
+            </span>
+            <span class="composer-name-en">
+              Paul Dukas
+            </span>
+            <span class="composer-record-count">
+              登録音源 2件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="アレクサンドル・スクリャービン alexander scriabin スクリャービン scriabin alexander scriabin">
+          <a href="scriabin.html">
+            <span class="composer-name-ja">
+              アレクサンドル・スクリャービン
+            </span>
+            <span class="composer-name-en">
+              Alexander Scriabin
+            </span>
+            <span class="composer-record-count">
+              登録音源 1件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="アントン・ルビンシテイン anton rubinstein アントン・ルビンシテイン anton rubinstein">
+          <a href="anton_rubinstein.html">
+            <span class="composer-name-ja">
+              アントン・ルビンシテイン
+            </span>
+            <span class="composer-name-en">
+              Anton Rubinstein
+            </span>
+            <span class="composer-record-count">
+              登録音源 1件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="カール・ニールセン carl nielsen ニールセン nielsen carl nielsen">
+          <a href="nielsen.html">
+            <span class="composer-name-ja">
+              カール・ニールセン
+            </span>
+            <span class="composer-name-en">
+              Carl Nielsen
+            </span>
+            <span class="composer-record-count">
+              登録音源 1件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="ガエターノ・ドニゼッティ gaetano donizetti ドニゼッティ donizetti gaetano donizetti">
+          <a href="donizetti.html">
+            <span class="composer-name-ja">
+              ガエターノ・ドニゼッティ
+            </span>
+            <span class="composer-name-en">
+              Gaetano Donizetti
+            </span>
+            <span class="composer-record-count">
+              登録音源 1件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="フランソワ・クープラン françois couperin f.クープラン couperin françois couperin">
+          <a href="francois_couperin.html">
+            <span class="composer-name-ja">
+              フランソワ・クープラン
+            </span>
+            <span class="composer-name-en">
+              François Couperin
+            </span>
+            <span class="composer-record-count">
+              登録音源 1件
+            </span>
+          </a>
+        </li>
+        <li class="composer-item"
+            data-search="フランツ・シュミット franz schmidt フランツ・シュミット franz schmidt schmidt">
+          <a href="franz_schmidt.html">
+            <span class="composer-name-ja">
+              フランツ・シュミット
+            </span>
+            <span class="composer-name-en">
+              Franz Schmidt
+            </span>
+            <span class="composer-record-count">
+              登録音源 1件
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <p>
+      クラシック音源と楽譜への道筋を整理する、
+      非営利の案内ページです。
+    </p>
+  </div>
+</footer>
+
+<script>
+  const searchInput =
+    document.getElementById("composer-search");
+  const composerItems =
+    [...document.querySelectorAll(".composer-item")];
+  const visibleCount =
+    document.getElementById("visible-count");
+
+  searchInput.addEventListener("input", () => {
+    const query =
+      searchInput.value.trim().toLowerCase();
+
+    let count = 0;
+
+    for (const item of composerItems) {
+      const matched =
+        !query || item.dataset.search.includes(query);
+
+      item.hidden = !matched;
+
+      if (matched) {
+        count += 1;
+      }
+    }
+
+    visibleCount.textContent = String(count);
+  });
+</script>
+</body>
+</html>
