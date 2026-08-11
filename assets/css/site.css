@@ -440,3 +440,69 @@ h1 {
 }
 
 /* NODE PAGE PROPORTIONS: END */
+
+/* Pilot home */
+.pilot-home .pilot-intro {
+  padding: 2.5rem 0 2rem;
+}
+
+.pilot-home .pilot-intro h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2rem;
+  line-height: 1.35;
+}
+
+.pilot-home .pilot-intro p {
+  margin: 0.35rem 0;
+}
+
+.pilot-home .pilot-note {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.pilot-home .composer-index {
+  padding: 2rem 0 2.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.pilot-home .composer-index h2 {
+  margin: 0 0 1.25rem;
+  font-size: 1.5rem;
+}
+
+.pilot-home .composer-link-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.pilot-home .composer-link-list a {
+  display: block;
+  padding: 0.7rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.pilot-home .source-note {
+  padding: 1.25rem 0;
+}
+
+@media (max-width: 640px) {
+  .pilot-home .pilot-intro {
+    padding: 1.75rem 0 1.5rem;
+  }
+
+  .pilot-home .pilot-intro h1 {
+    font-size: 1.65rem;
+  }
+
+  .pilot-home .composer-index {
+    padding: 1.5rem 0 2rem;
+  }
+
+  .pilot-home .composer-link-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
