@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="240" viewBox="0 0 240 240">
+  <!--
+    COLOR SETTINGS
+    この3色だけ変更すれば、基本的なカラーバリエーションを作れます。
+  -->
+  <style>
+    :root {
+      --background: #f4f0e8;
+      --vinyl: #33383D;
+      --label: #C9C7C0;
+    }
+    .background { fill: var(--background); }
+    .vinyl-base { fill: var(--vinyl); }
+    .label { fill: var(--label); }
+  </style>
+
+  <defs>
+    <!-- 盤面の陰影。基準となるvinyl色の上に黒・白を半透明で重ねるため、
+         黒盤だけでなく赤盤・青盤などでも質感が残ります。 -->
+    <radialGradient id="vinylShade" cx="48%" cy="44%" r="62%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="48%" stop-color="#000000" stop-opacity="0.03"/>
+      <stop offset="78%" stop-color="#000000" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.38"/>
+    </radialGradient>
+
+    <linearGradient id="shineA" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="43%" stop-color="#ffffff" stop-opacity="0.05"/>
+      <stop offset="49%" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="56%" stop-color="#ffffff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="shineB" x1="1" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="45%" stop-color="#ffffff" stop-opacity="0.03"/>
+      <stop offset="51%" stop-color="#ffffff" stop-opacity="0.19"/>
+      <stop offset="59%" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="recordClip">
+      <circle cx="120" cy="120" r="109"/>
+    </clipPath>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect class="background" width="240" height="240"/>
+
+  <!-- VINYL -->
+  <circle class="vinyl-base" cx="120" cy="120" r="109"/>
+  <circle cx="120" cy="120" r="109" fill="url(#vinylShade)"
+          stroke="#000000" stroke-opacity="0.48" stroke-width="2"/>
+
+  <!-- GROOVES -->
+  <g fill="none" stroke="#000000" stroke-opacity="0.25" stroke-width="0.55">
+    <circle cx="120" cy="120" r="102"/>
+    <circle cx="120" cy="120" r="96"/>
+    <circle cx="120" cy="120" r="90"/>
+    <circle cx="120" cy="120" r="84"/>
+    <circle cx="120" cy="120" r="78"/>
+    <circle cx="120" cy="120" r="72"/>
+    <circle cx="120" cy="120" r="66"/>
+    <circle cx="120" cy="120" r="60"/>
+    <circle cx="120" cy="120" r="54"/>
+    <circle cx="120" cy="120" r="48"/>
+  </g>
+
+  <!-- Fine groove highlights -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.07" stroke-width="0.35">
+    <circle cx="120" cy="120" r="99"/>
+    <circle cx="120" cy="120" r="87"/>
+    <circle cx="120" cy="120" r="75"/>
+    <circle cx="120" cy="120" r="63"/>
+    <circle cx="120" cy="120" r="51"/>
+  </g>
+
+  <!-- SHINE -->
+  <g clip-path="url(#recordClip)">
+    <ellipse cx="73" cy="65" rx="105" ry="22"
+             transform="rotate(-43 73 65)"
+             fill="url(#shineA)" opacity="0.86"/>
+    <ellipse cx="174" cy="178" rx="100" ry="19"
+             transform="rotate(-43 174 178)"
+             fill="url(#shineB)" opacity="0.78"/>
+  </g>
+
+  <!-- LABEL -->
+  <circle cx="120" cy="120" r="40" class="label"/>
+  <circle cx="120" cy="120" r="39" fill="none"
+          stroke="#000000" stroke-opacity="0.72" stroke-width="0.65"/>
+  <circle cx="120" cy="120" r="37.8" fill="none"
+          stroke="#000000" stroke-opacity="0.42" stroke-width="0.35"/>
+
+  <!-- SPINDLE HOLE -->
+  <circle cx="120" cy="120" r="3.2" fill="#000000" fill-opacity="0.17"
+          stroke="#000000" stroke-opacity="0.45" stroke-width="0.7"/>
+  <circle cx="119.2" cy="119.1" r="1.15" fill="#ffffff" fill-opacity="0.55"/>
+</svg>

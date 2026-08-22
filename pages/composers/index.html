@@ -10,7 +10,11 @@
   <link rel="stylesheet" href="../../assets/css/site.css">
   <style>
     .composer-index-tools {
-      margin: 2rem 0;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      align-items: center;
+      gap: 1rem;
+      margin: 0 0 1.5rem;
     }
 
     .composer-search {
@@ -20,12 +24,6 @@
       border: 1px solid #b8b8b8;
       border-radius: 0.25rem;
       font: inherit;
-    }
-
-    .composer-count {
-      margin-top: 0.75rem;
-      color: #666;
-      font-size: 0.9rem;
     }
 
     .composer-index-list {
@@ -38,7 +36,10 @@
     }
 
     .composer-item a {
-      display: block;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-content: start;
+      column-gap: 0.75rem;
       padding: 0.9rem 1rem;
       border: 1px solid #dedede;
       border-radius: 0.25rem;
@@ -53,30 +54,56 @@
     }
 
     .composer-name-ja {
-      display: block;
+      grid-column: 1 / -1;
       font-weight: 600;
+      overflow-wrap: anywhere;
     }
 
     .composer-name-en {
-      display: block;
+      grid-column: 1;
       margin-top: 0.2rem;
       color: #777;
       font-size: 0.82rem;
+      overflow-wrap: anywhere;
     }
 
     .composer-record-count {
-      display: block;
-      margin-top: 0.45rem;
+      grid-column: 2;
+      align-self: end;
+      margin-top: 0.2rem;
       color: #666;
       font-size: 0.82rem;
+      white-space: nowrap;
+    }
+
+    .composer-back-to-top {
+      margin: 2rem 0 0;
+      text-align: right;
+    }
+
+    .composer-back-to-top a {
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-underline-offset: 4px;
+    }
+
+    .composer-back-to-top a:hover {
+      color: var(--link);
     }
 
     .composer-item[hidden] {
       display: none;
     }
+
+    @media (max-width: 560px) {
+      .composer-index-tools {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+      }
+    }
   </style>
 </head>
-<body>
+<body id="page-top">
 <header class="site-header">
   <div class="shell header-inner">
     <a class="site-title" href="../../index.html">
@@ -117,11 +144,6 @@
           type="search"
           placeholder="例：バッハ、Vivaldi、シューベルト"
           autocomplete="off">
-        <p class="composer-count">
-          表示中：
-          <span id="visible-count">105</span>
-          ／105人
-        </p>
       </div>
 
       <ul class="composer-index-list" id="composer-list">
@@ -136,7 +158,7 @@
               Ludwig van Beethoven
             </span>
             <span class="composer-record-count">
-              登録音源 1186件
+              1186件
             </span>
           </a>
         </li>
@@ -150,7 +172,7 @@
               Wolfgang Amadeus Mozart
             </span>
             <span class="composer-record-count">
-              登録音源 774件
+              774件
             </span>
           </a>
         </li>
@@ -164,7 +186,7 @@
               Johann Sebastian Bach
             </span>
             <span class="composer-record-count">
-              登録音源 507件
+              507件
             </span>
           </a>
         </li>
@@ -178,7 +200,7 @@
               Johannes Brahms
             </span>
             <span class="composer-record-count">
-              登録音源 305件
+              305件
             </span>
           </a>
         </li>
@@ -192,7 +214,7 @@
               Pyotr Ilyich Tchaikovsky
             </span>
             <span class="composer-record-count">
-              登録音源 223件
+              223件
             </span>
           </a>
         </li>
@@ -206,7 +228,7 @@
               Joseph Haydn
             </span>
             <span class="composer-record-count">
-              登録音源 190件
+              190件
             </span>
           </a>
         </li>
@@ -220,7 +242,7 @@
               Franz Schubert
             </span>
             <span class="composer-record-count">
-              登録音源 176件
+              176件
             </span>
           </a>
         </li>
@@ -234,7 +256,7 @@
               Frédéric Chopin
             </span>
             <span class="composer-record-count">
-              登録音源 162件
+              162件
             </span>
           </a>
         </li>
@@ -248,7 +270,7 @@
               Antonín Dvořák
             </span>
             <span class="composer-record-count">
-              登録音源 135件
+              135件
             </span>
           </a>
         </li>
@@ -262,7 +284,7 @@
               George Frideric Handel
             </span>
             <span class="composer-record-count">
-              登録音源 109件
+              109件
             </span>
           </a>
         </li>
@@ -276,7 +298,7 @@
               Robert Schumann
             </span>
             <span class="composer-record-count">
-              登録音源 102件
+              102件
             </span>
           </a>
         </li>
@@ -290,7 +312,7 @@
               Richard Wagner
             </span>
             <span class="composer-record-count">
-              登録音源 95件
+              95件
             </span>
           </a>
         </li>
@@ -304,7 +326,7 @@
               Jean Sibelius
             </span>
             <span class="composer-record-count">
-              登録音源 85件
+              85件
             </span>
           </a>
         </li>
@@ -318,7 +340,7 @@
               Maurice Ravel
             </span>
             <span class="composer-record-count">
-              登録音源 82件
+              82件
             </span>
           </a>
         </li>
@@ -332,7 +354,7 @@
               Felix Mendelssohn
             </span>
             <span class="composer-record-count">
-              登録音源 81件
+              81件
             </span>
           </a>
         </li>
@@ -346,7 +368,7 @@
               Béla Bartók
             </span>
             <span class="composer-record-count">
-              登録音源 73件
+              73件
             </span>
           </a>
         </li>
@@ -360,7 +382,7 @@
               Richard Strauss
             </span>
             <span class="composer-record-count">
-              登録音源 73件
+              73件
             </span>
           </a>
         </li>
@@ -374,7 +396,7 @@
               Anton Bruckner
             </span>
             <span class="composer-record-count">
-              登録音源 66件
+              66件
             </span>
           </a>
         </li>
@@ -388,7 +410,7 @@
               Claude Debussy
             </span>
             <span class="composer-record-count">
-              登録音源 61件
+              61件
             </span>
           </a>
         </li>
@@ -402,7 +424,7 @@
               Franz Liszt
             </span>
             <span class="composer-record-count">
-              登録音源 61件
+              61件
             </span>
           </a>
         </li>
@@ -416,7 +438,7 @@
               Antonio Vivaldi
             </span>
             <span class="composer-record-count">
-              登録音源 61件
+              61件
             </span>
           </a>
         </li>
@@ -430,7 +452,7 @@
               Gustav Mahler
             </span>
             <span class="composer-record-count">
-              登録音源 59件
+              59件
             </span>
           </a>
         </li>
@@ -444,7 +466,7 @@
               Sergei Rachmaninoff
             </span>
             <span class="composer-record-count">
-              登録音源 56件
+              56件
             </span>
           </a>
         </li>
@@ -458,7 +480,7 @@
               Nikolai Rimsky-Korsakov
             </span>
             <span class="composer-record-count">
-              登録音源 43件
+              43件
             </span>
           </a>
         </li>
@@ -472,7 +494,7 @@
               Johann Strauss II
             </span>
             <span class="composer-record-count">
-              登録音源 35件
+              35件
             </span>
           </a>
         </li>
@@ -486,7 +508,7 @@
               Georges Bizet
             </span>
             <span class="composer-record-count">
-              登録音源 34件
+              34件
             </span>
           </a>
         </li>
@@ -500,7 +522,7 @@
               Edvard Grieg
             </span>
             <span class="composer-record-count">
-              登録音源 33件
+              33件
             </span>
           </a>
         </li>
@@ -514,7 +536,7 @@
               Camille Saint-Saëns
             </span>
             <span class="composer-record-count">
-              登録音源 32件
+              32件
             </span>
           </a>
         </li>
@@ -528,7 +550,7 @@
               Georg Philipp Telemann
             </span>
             <span class="composer-record-count">
-              登録音源 32件
+              32件
             </span>
           </a>
         </li>
@@ -542,7 +564,7 @@
               Edward Elgar
             </span>
             <span class="composer-record-count">
-              登録音源 31件
+              31件
             </span>
           </a>
         </li>
@@ -556,7 +578,7 @@
               Gabriel Fauré
             </span>
             <span class="composer-record-count">
-              登録音源 29件
+              29件
             </span>
           </a>
         </li>
@@ -570,7 +592,7 @@
               Hector Berlioz
             </span>
             <span class="composer-record-count">
-              登録音源 29件
+              29件
             </span>
           </a>
         </li>
@@ -584,7 +606,7 @@
               César Franck
             </span>
             <span class="composer-record-count">
-              登録音源 28件
+              28件
             </span>
           </a>
         </li>
@@ -598,7 +620,7 @@
               Sergei Prokofiev
             </span>
             <span class="composer-record-count">
-              登録音源 27件
+              27件
             </span>
           </a>
         </li>
@@ -612,7 +634,7 @@
               Ottorino Respighi
             </span>
             <span class="composer-record-count">
-              登録音源 24件
+              24件
             </span>
           </a>
         </li>
@@ -626,7 +648,7 @@
               Gioachino Rossini
             </span>
             <span class="composer-record-count">
-              登録音源 24件
+              24件
             </span>
           </a>
         </li>
@@ -640,7 +662,7 @@
               Modest Mussorgsky
             </span>
             <span class="composer-record-count">
-              登録音源 23件
+              23件
             </span>
           </a>
         </li>
@@ -654,7 +676,7 @@
               Ralph Vaughan Williams
             </span>
             <span class="composer-record-count">
-              登録音源 23件
+              23件
             </span>
           </a>
         </li>
@@ -668,7 +690,7 @@
               Max Bruch
             </span>
             <span class="composer-record-count">
-              登録音源 22件
+              22件
             </span>
           </a>
         </li>
@@ -682,7 +704,7 @@
               Bedřich Smetana
             </span>
             <span class="composer-record-count">
-              登録音源 21件
+              21件
             </span>
           </a>
         </li>
@@ -696,7 +718,7 @@
               Zoltán Kodály
             </span>
             <span class="composer-record-count">
-              登録音源 18件
+              18件
             </span>
           </a>
         </li>
@@ -710,7 +732,7 @@
               Carl Maria von Weber
             </span>
             <span class="composer-record-count">
-              登録音源 17件
+              17件
             </span>
           </a>
         </li>
@@ -724,7 +746,7 @@
               Édouard Lalo
             </span>
             <span class="composer-record-count">
-              登録音源 16件
+              16件
             </span>
           </a>
         </li>
@@ -738,7 +760,7 @@
               George Gershwin
             </span>
             <span class="composer-record-count">
-              登録音源 14件
+              14件
             </span>
           </a>
         </li>
@@ -752,7 +774,7 @@
               Niccolò Paganini
             </span>
             <span class="composer-record-count">
-              登録音源 14件
+              14件
             </span>
           </a>
         </li>
@@ -766,7 +788,7 @@
               Arcangelo Corelli
             </span>
             <span class="composer-record-count">
-              登録音源 13件
+              13件
             </span>
           </a>
         </li>
@@ -780,7 +802,7 @@
               Arnold Schoenberg
             </span>
             <span class="composer-record-count">
-              登録音源 13件
+              13件
             </span>
           </a>
         </li>
@@ -794,7 +816,7 @@
               Ernest Chausson
             </span>
             <span class="composer-record-count">
-              登録音源 12件
+              12件
             </span>
           </a>
         </li>
@@ -808,7 +830,7 @@
               Alexander Borodin
             </span>
             <span class="composer-record-count">
-              登録音源 12件
+              12件
             </span>
           </a>
         </li>
@@ -822,7 +844,7 @@
               Franz von Suppé
             </span>
             <span class="composer-record-count">
-              登録音源 11件
+              11件
             </span>
           </a>
         </li>
@@ -836,7 +858,7 @@
               Giacomo Puccini
             </span>
             <span class="composer-record-count">
-              登録音源 11件
+              11件
             </span>
           </a>
         </li>
@@ -850,7 +872,7 @@
               Jacques Offenbach
             </span>
             <span class="composer-record-count">
-              登録音源 10件
+              10件
             </span>
           </a>
         </li>
@@ -864,7 +886,7 @@
               Giuseppe Tartini
             </span>
             <span class="composer-record-count">
-              登録音源 10件
+              10件
             </span>
           </a>
         </li>
@@ -878,7 +900,7 @@
               Frederick Delius
             </span>
             <span class="composer-record-count">
-              登録音源 10件
+              10件
             </span>
           </a>
         </li>
@@ -892,7 +914,7 @@
               Enrique Granados
             </span>
             <span class="composer-record-count">
-              登録音源 8件
+              8件
             </span>
           </a>
         </li>
@@ -906,7 +928,7 @@
               Erik Satie
             </span>
             <span class="composer-record-count">
-              登録音源 8件
+              8件
             </span>
           </a>
         </li>
@@ -920,7 +942,7 @@
               Leoš Janáček
             </span>
             <span class="composer-record-count">
-              登録音源 8件
+              8件
             </span>
           </a>
         </li>
@@ -934,7 +956,7 @@
               Giuseppe Verdi
             </span>
             <span class="composer-record-count">
-              登録音源 8件
+              8件
             </span>
           </a>
         </li>
@@ -948,7 +970,7 @@
               Gustav Holst
             </span>
             <span class="composer-record-count">
-              登録音源 7件
+              7件
             </span>
           </a>
         </li>
@@ -962,7 +984,7 @@
               Henryk Wieniawski
             </span>
             <span class="composer-record-count">
-              登録音源 7件
+              7件
             </span>
           </a>
         </li>
@@ -976,7 +998,7 @@
               Vincent d&#x27;Indy
             </span>
             <span class="composer-record-count">
-              登録音源 6件
+              6件
             </span>
           </a>
         </li>
@@ -990,7 +1012,7 @@
               Luigi Boccherini
             </span>
             <span class="composer-record-count">
-              登録音源 6件
+              6件
             </span>
           </a>
         </li>
@@ -1004,7 +1026,7 @@
               Alexander Glazunov
             </span>
             <span class="composer-record-count">
-              登録音源 5件
+              5件
             </span>
           </a>
         </li>
@@ -1018,7 +1040,7 @@
               Pablo de Sarasate
             </span>
             <span class="composer-record-count">
-              登録音源 5件
+              5件
             </span>
           </a>
         </li>
@@ -1032,7 +1054,7 @@
               Mily Balakirev
             </span>
             <span class="composer-record-count">
-              登録音源 5件
+              5件
             </span>
           </a>
         </li>
@@ -1046,7 +1068,7 @@
               Paul Hindemith
             </span>
             <span class="composer-record-count">
-              登録音源 5件
+              5件
             </span>
           </a>
         </li>
@@ -1060,7 +1082,7 @@
               Manuel de Falla
             </span>
             <span class="composer-record-count">
-              登録音源 5件
+              5件
             </span>
           </a>
         </li>
@@ -1074,7 +1096,7 @@
               Jean-Philippe Rameau
             </span>
             <span class="composer-record-count">
-              登録音源 5件
+              5件
             </span>
           </a>
         </li>
@@ -1088,7 +1110,7 @@
               Émile Waldteufel
             </span>
             <span class="composer-record-count">
-              登録音源 5件
+              5件
             </span>
           </a>
         </li>
@@ -1102,7 +1124,7 @@
               Isaac Albéniz
             </span>
             <span class="composer-record-count">
-              登録音源 4件
+              4件
             </span>
           </a>
         </li>
@@ -1116,7 +1138,7 @@
               Mikhail Glinka
             </span>
             <span class="composer-record-count">
-              登録音源 4件
+              4件
             </span>
           </a>
         </li>
@@ -1130,7 +1152,7 @@
               Christoph Willibald Gluck
             </span>
             <span class="composer-record-count">
-              登録音源 4件
+              4件
             </span>
           </a>
         </li>
@@ -1144,7 +1166,7 @@
               Léo Delibes
             </span>
             <span class="composer-record-count">
-              登録音源 4件
+              4件
             </span>
           </a>
         </li>
@@ -1158,7 +1180,7 @@
               Alban Berg
             </span>
             <span class="composer-record-count">
-              登録音源 4件
+              4件
             </span>
           </a>
         </li>
@@ -1172,7 +1194,7 @@
               Franz Berwald
             </span>
             <span class="composer-record-count">
-              登録音源 4件
+              4件
             </span>
           </a>
         </li>
@@ -1186,7 +1208,7 @@
               Tomaso Antonio Vitali
             </span>
             <span class="composer-record-count">
-              登録音源 4件
+              4件
             </span>
           </a>
         </li>
@@ -1200,7 +1222,7 @@
               Vasily Kalinnikov
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1214,7 +1236,7 @@
               Muzio Clementi
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1228,7 +1250,7 @@
               Charles Gounod
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1242,7 +1264,7 @@
               Emmanuel Chabrier
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1256,7 +1278,7 @@
               Johann Pachelbel
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1270,7 +1292,7 @@
               Ferruccio Busoni
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1284,7 +1306,7 @@
               Giovanni Battista Pergolesi
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1298,7 +1320,7 @@
               Amilcare Ponchielli
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1312,7 +1334,7 @@
               Jules Massenet
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1326,7 +1348,7 @@
               Josef Suk
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1340,7 +1362,7 @@
               Lili Boulanger
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1354,7 +1376,7 @@
               Albert Roussel
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1368,7 +1390,7 @@
               Franz Lehár
             </span>
             <span class="composer-record-count">
-              登録音源 3件
+              3件
             </span>
           </a>
         </li>
@@ -1382,7 +1404,7 @@
               Anton Webern
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1396,7 +1418,7 @@
               Henri Vieuxtemps
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1410,7 +1432,7 @@
               Eugène Ysaÿe
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1424,7 +1446,7 @@
               Carl Philipp Emanuel Bach
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1438,7 +1460,7 @@
               Luigi Cherubini
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1452,7 +1474,7 @@
               Giovanni Battista Viotti
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1466,7 +1488,7 @@
               Charles Ives
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1480,7 +1502,7 @@
               Nikolai Myaskovsky
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1494,7 +1516,7 @@
               Pietro Mascagni
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1508,7 +1530,7 @@
               Paul Dukas
             </span>
             <span class="composer-record-count">
-              登録音源 2件
+              2件
             </span>
           </a>
         </li>
@@ -1522,7 +1544,7 @@
               Alexander Scriabin
             </span>
             <span class="composer-record-count">
-              登録音源 1件
+              1件
             </span>
           </a>
         </li>
@@ -1536,7 +1558,7 @@
               Anton Rubinstein
             </span>
             <span class="composer-record-count">
-              登録音源 1件
+              1件
             </span>
           </a>
         </li>
@@ -1550,7 +1572,7 @@
               Carl Nielsen
             </span>
             <span class="composer-record-count">
-              登録音源 1件
+              1件
             </span>
           </a>
         </li>
@@ -1564,7 +1586,7 @@
               Gaetano Donizetti
             </span>
             <span class="composer-record-count">
-              登録音源 1件
+              1件
             </span>
           </a>
         </li>
@@ -1578,7 +1600,7 @@
               François Couperin
             </span>
             <span class="composer-record-count">
-              登録音源 1件
+              1件
             </span>
           </a>
         </li>
@@ -1592,11 +1614,14 @@
               Franz Schmidt
             </span>
             <span class="composer-record-count">
-              登録音源 1件
+              1件
             </span>
           </a>
         </li>
       </ul>
+      <p class="composer-back-to-top">
+        <a href="#page-top">↑ ページ上部へ戻る</a>
+      </p>
     </div>
   </section>
 </main>
@@ -1615,14 +1640,9 @@
     document.getElementById("composer-search");
   const composerItems =
     [...document.querySelectorAll(".composer-item")];
-  const visibleCount =
-    document.getElementById("visible-count");
-
   searchInput.addEventListener("input", () => {
     const query =
       searchInput.value.trim().toLowerCase();
-
-    let count = 0;
 
     for (const item of composerItems) {
       const matched =
@@ -1630,12 +1650,7 @@
 
       item.hidden = !matched;
 
-      if (matched) {
-        count += 1;
-      }
     }
-
-    visibleCount.textContent = String(count);
   });
 </script>
 </body>

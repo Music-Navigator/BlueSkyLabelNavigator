@@ -378,6 +378,17 @@ h1 {
   font-size: 0.86rem;
 }
 
+/* 作曲家の作品一覧から登録状況までの間隔だけを引き締める。 */
+.section:has(.composer-work-list) {
+  padding-bottom: 2.5rem;
+}
+
+@media (max-width: 720px) {
+  .section:has(.composer-work-list) {
+    padding-bottom: 2rem;
+  }
+}
+
 /* NODE PAGE PROPORTIONS: START */
 
 /*
@@ -441,68 +452,172 @@ h1 {
 
 /* NODE PAGE PROPORTIONS: END */
 
-/* Pilot home */
-.pilot-home .pilot-intro {
-  padding: 2.5rem 0 2rem;
+/* WORK PAGE RECORDINGS: START */
+
+.work-page-hero .narrow {
+  position: relative;
 }
 
-.pilot-home .pilot-intro h1 {
-  margin: 0 0 0.75rem;
-  font-size: 2rem;
-  line-height: 1.35;
+.work-page-hero .breadcrumb {
+  padding-right: 9rem;
 }
 
-.pilot-home .pilot-intro p {
-  margin: 0.35rem 0;
-}
-
-.pilot-home .pilot-note {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.pilot-home .composer-index {
-  padding: 2rem 0 2.5rem;
-  border-top: 1px solid var(--line);
-}
-
-.pilot-home .composer-index h2 {
-  margin: 0 0 1.25rem;
-  font-size: 1.5rem;
-}
-
-.pilot-home .composer-link-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 0;
-  border-top: 1px solid var(--line);
-}
-
-.pilot-home .composer-link-list a {
-  display: block;
-  padding: 0.7rem 0.5rem;
-  border-bottom: 1px solid var(--line);
+.imslp-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.35rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 0.25rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
   text-decoration: none;
 }
 
-.pilot-home .source-note {
-  padding: 1.25rem 0;
+.imslp-link::after {
+  content: " ↗";
+  font-size: 0.85em;
 }
 
-@media (max-width: 640px) {
-  .pilot-home .pilot-intro {
-    padding: 1.75rem 0 1.5rem;
-  }
+.imslp-link:hover {
+  border-color: var(--link);
+  color: var(--link);
+}
 
-  .pilot-home .pilot-intro h1 {
-    font-size: 1.65rem;
-  }
+.recording-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
 
-  .pilot-home .composer-index {
-    padding: 1.5rem 0 2rem;
-  }
+.recording-card {
+  display: grid;
+  grid-template-columns: clamp(5.5rem, 15vw, 7.5rem) minmax(0, 1fr);
+  gap: clamp(1rem, 3vw, 1.5rem);
+  align-items: stretch;
+  padding: clamp(1rem, 3vw, 1.4rem);
+  border: 1px solid #d7dcde;
+  border-radius: 0.4rem;
+  background: #fff;
+  transition: box-shadow 150ms ease, transform 150ms ease;
+}
 
-  .pilot-home .composer-link-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+@media (hover: hover) {
+  .recording-card:hover {
+    box-shadow: 0 0.35rem 1rem rgb(24 34 38 / 10%);
+    transform: translateY(-1px);
   }
 }
+
+.recording-card:focus-within {
+  box-shadow: 0 0.35rem 1rem rgb(24 34 38 / 10%);
+}
+
+.recording-image-link {
+  display: block;
+  align-self: center;
+}
+
+.recording-image-link:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 0.2rem;
+}
+
+.recording-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+}
+
+.recording-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto;
+  row-gap: 0.45rem;
+  min-width: 0;
+}
+
+.recording-body h2 {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  min-width: 0;
+  margin: 0 0 0 clamp(0.75rem, 3vw, 2.25rem);
+  color: #182226;
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.recording-artist-link {
+  color: inherit;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.recording-artist-link:hover {
+  color: var(--link);
+  text-decoration-color: currentColor;
+}
+
+.recording-body p {
+  grid-column: 1;
+  grid-row: 1;
+  margin: 0;
+  color: #657078;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.recording-link {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  justify-self: end;
+  margin-top: 0.2rem;
+  color: #1f5f7a;
+  font-size: 0.95rem;
+  text-underline-offset: 0.2em;
+}
+
+.recording-link::after {
+  content: " ↗";
+  font-size: 0.85em;
+}
+
+@media (max-width: 40rem) {
+  .work-page-hero .breadcrumb {
+    padding-right: 0;
+  }
+
+  .imslp-link {
+    position: static;
+    display: inline-block;
+    margin: 0 0 0.8rem;
+  }
+
+  .recording-card {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.85rem;
+    padding: 0.9rem;
+  }
+
+  .recording-body h2 {
+    margin-left: 0.5rem;
+    font-size: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recording-card {
+    transition: none;
+  }
+
+  .recording-card:hover {
+    transform: none;
+  }
+}
+
+/* WORK PAGE RECORDINGS: END */

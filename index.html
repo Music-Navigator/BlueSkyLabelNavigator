@@ -3,63 +3,745 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BlueSkyLabelのクラシック音源を検索し、作品・楽器・編成などからたどるための案内ページ。">
-  <title>BlueSkyLabel Navigator（仮）</title>
+  <meta name="description"
+        content="Blue Sky Labelのクラシック音源を、作曲家や作品名、作品番号、演奏家などから探すための案内ページ。">
+  <title>BlueSkyLabel Navigator</title>
   <link rel="stylesheet" href="assets/css/site.css">
+
+  <style>
+    .search-section {
+      padding-top: 1.5rem;
+      padding-bottom: 1rem;
+    }
+
+    .search-section .content-narrow,
+    #composers .narrow {
+      max-width: 1100px;
+    }
+
+    .search-section h1,
+    #composers h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+
+    .search-section h1 {
+      margin-bottom: 0.25rem;
+    }
+
+    .search-form {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 1rem;
+      align-items: stretch;
+      margin: 0;
+    }
+
+    .search-form input[type="search"] {
+      box-sizing: border-box;
+      width: 100%;
+      min-width: 0;
+    }
+
+    .search-form button {
+      min-width: 6.5rem;
+      white-space: nowrap;
+    }
+
+    #composers {
+      padding-top: 1.5rem;
+      padding-bottom: 2rem;
+    }
+
+    #composers .section-heading {
+      margin-bottom: 1.1rem;
+    }
+
+    #composers .section-heading h2 {
+      margin-bottom: 0.75rem;
+    }
+
+    #composers .section-heading p {
+      margin: 0;
+    }
+
+    .composer-index-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid #d8d3ca;
+      list-style: none;
+    }
+
+    .composer-item {
+      border-bottom: 1px solid #d8d3ca;
+    }
+
+    .composer-item a {
+      display: block;
+      padding: 0.72rem 0.9rem;
+      color: inherit;
+      text-decoration: none;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .composer-item a:hover,
+    .composer-item a:focus-visible {
+      background: rgba(0, 0, 0, 0.025);
+    }
+
+    .composer-back-to-top {
+      margin: 1.5rem 0 0;
+      text-align: right;
+    }
+
+    .composer-back-to-top a {
+      color: var(--muted);
+      font-size: 0.86rem;
+      text-underline-offset: 4px;
+    }
+
+    .source-note {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .source-note .narrow {
+      max-width: 1100px;
+    }
+
+    @media (max-width: 760px) {
+      .composer-index-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .search-section {
+        padding-top: 1.5rem;
+        padding-bottom: 1rem;
+      }
+
+      .search-section h1,
+      #composers h2 {
+        font-size: 1.7rem;
+      }
+
+      .search-form {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 0.6rem;
+      }
+
+      .search-form button {
+        min-width: 5rem;
+      }
+
+      #composers {
+        padding-top: 1rem;
+      }
+
+      .composer-index-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body>
+
+<body id="page-top">
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="site-title" href="index.html">BlueSkyLabel Navigator</a>
-      <nav class="site-nav" aria-label="主要ナビゲーション">
-        <a href="#composers">作曲家</a>
-      </nav>
+      <a class="site-title" href="index.html">
+        BlueSkyLabel Navigator
+      </a>
     </div>
   </header>
 
-  <main class="pilot-home">
-    <section class="pilot-intro">
-      <div class="shell">
-        <h1>BlueSkyLabelの音源をたどる</h1>
-        <p>作曲家から作品と登録音源を探すことができます。</p>
-        <p class="pilot-note">検索機能はパイロット版では準備中です。</p>
+  <main>
+    <section class="search-section" id="search">
+      <div class="shell content-narrow">
+        <h1>音源を探す</h1>
+
+        <form
+          class="search-form"
+          action="search.html"
+          method="get"
+          role="search">
+          <label class="visually-hidden" for="site-search">
+            音源検索
+          </label>
+          <input
+            id="site-search"
+            name="q"
+            type="search"
+            placeholder="曲名・作品番号・演奏家 etc."
+            autocomplete="off">
+          <button type="submit">検索</button>
+        </form>
       </div>
     </section>
 
-    <section class="composer-index" id="composers">
-      <div class="shell">
-        <h2>作曲家から探す</h2>
-
-        <div class="composer-link-list">
-          <a href="pages/composers/beethoven.html">ベートーヴェン</a>
-          <a href="pages/composers/brahms.html">ブラームス</a>
-          <a href="pages/composers/dvorak.html">ドヴォルザーク</a>
-          <a href="pages/composers/chopin.html">ショパン</a>
-          <a href="pages/composers/debussy.html">ドビュッシー</a>
-          <a href="pages/composers/bruckner.html">ブルックナー</a>
-          <a href="pages/composers/berlioz.html">ベルリオーズ</a>
-          <a href="pages/composers/bizet.html">ビゼー</a>
-          <a href="pages/composers/bartok.html">バルトーク</a>
-          <a href="pages/composers/elgar.html">エルガー</a>
-          <a href="pages/composers/faure.html">フォーレ</a>
-          <a href="pages/composers/franck.html">フランク</a>
-          <a href="pages/composers/borodin.html">ボロディン</a>
-          <a href="pages/composers/glinka.html">グリンカ</a>
-          <a href="pages/composers/glazunov.html">グラズノフ</a>
+    <section class="section" id="composers">
+      <div class="shell narrow">
+        <div class="section-heading">
+          <h2>作曲家</h2>
+          <p>
+            Blue Sky Labelの登録音源が多い順に掲載しています。
+          </p>
         </div>
+
+        <ul class="composer-index-list" id="composer-list">
+
+        <li class="composer-item">
+          <a href="pages/composers/beethoven.html">
+            ベートーヴェン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/mozart.html">
+            モーツァルト
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/johann_sebastian_bach.html">
+            ヨハン・ゼバスティアン・バッハ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/brahms.html">
+            ブラームス
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/tchaikovsky.html">
+            チャイコフスキー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/haydn.html">
+            ハイドン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/schubert.html">
+            シューベルト
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/chopin.html">
+            ショパン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/dvorak.html">
+            ドヴォルザーク
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/handel.html">
+            ヘンデル
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/schumann.html">
+            シューマン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/wagner.html">
+            ワーグナー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/sibelius.html">
+            シベリウス
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/ravel.html">
+            ラヴェル
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/mendelssohn.html">
+            メンデルスゾーン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/bartok.html">
+            バルトーク
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/richard_strauss.html">
+            リヒャルト・シュトラウス
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/bruckner.html">
+            ブルックナー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/debussy.html">
+            ドビュッシー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/liszt.html">
+            リスト
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/vivaldi.html">
+            ヴィヴァルディ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/mahler.html">
+            マーラー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/rachmaninoff.html">
+            ラフマニノフ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/rimsky_korsakov.html">
+            リムスキー＝コルサコフ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/johann_strauss_ii.html">
+            ヨハン・シュトラウス2世
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/bizet.html">
+            ビゼー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/grieg.html">
+            グリーグ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/saint_saens.html">
+            サン＝サーンス
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/telemann.html">
+            テレマン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/elgar.html">
+            エルガー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/faure.html">
+            フォーレ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/berlioz.html">
+            ベルリオーズ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/franck.html">
+            フランク
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/prokofiev.html">
+            プロコフィエフ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/respighi.html">
+            レスピーギ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/rossini.html">
+            ロッシーニ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/mussorgsky.html">
+            ムソルグスキー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/vaughan_williams.html">
+            レイフ・ヴォーン・ウィリアムズ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/bruch.html">
+            ブルッフ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/smetana.html">
+            スメタナ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/kodaly.html">
+            コダーイ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/weber.html">
+            ウェーバー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/lalo.html">
+            ラロ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/gershwin.html">
+            ガーシュイン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/paganini.html">
+            パガニーニ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/corelli.html">
+            コレッリ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/schoenberg.html">
+            シェーンベルク
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/chausson.html">
+            ショーソン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/borodin.html">
+            ボロディン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/suppe.html">
+            スッペ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/puccini.html">
+            プッチーニ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/offenbach.html">
+            オッフェンバック
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/tartini.html">
+            タルティーニ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/delius.html">
+            ディーリアス
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/granados.html">
+            グラナドス
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/satie.html">
+            サティ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/janacek.html">
+            ヤナーチェク
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/verdi.html">
+            ヴェルディ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/holst.html">
+            ホルスト
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/wieniawski.html">
+            ヴィエニャフスキ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/dindy.html">
+            ダンディ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/boccherini.html">
+            ボッケリーニ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/glazunov.html">
+            グラズノフ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/sarasate.html">
+            サラサーテ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/balakirev.html">
+            バラキレフ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/hindemith.html">
+            ヒンデミット
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/falla.html">
+            ファリャ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/rameau.html">
+            ラモー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/waldteufel.html">
+            ワルトトイフェル
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/albeniz.html">
+            アルベニス
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/glinka.html">
+            グリンカ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/gluck.html">
+            グルック
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/delibes.html">
+            ドリーブ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/berg.html">
+            ベルク
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/berwald.html">
+            ベルワルド
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/vitali.html">
+            ヴィターリ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/kalinnikov.html">
+            カリンニコフ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/clementi.html">
+            クレメンティ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/gounod.html">
+            グノー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/chabrier.html">
+            シャブリエ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/pachelbel.html">
+            パッヘルベル
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/busoni.html">
+            ブゾーニ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/pergolesi.html">
+            ペルゴレージ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/ponchielli.html">
+            ポンキエッリ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/massenet.html">
+            マスネ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/josef_suk.html">
+            ヨゼフ・スーク
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/lili_boulanger.html">
+            リリ・ブーランジェ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/roussel.html">
+            ルーセル
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/lehar.html">
+            レハール
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/webern.html">
+            アントン・ウェーベルン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/vieuxtemps.html">
+            アンリ・ヴュータン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/eugene_ysaye.html">
+            ウジェーヌ・イザイ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/carl_philipp_emanuel_bach.html">
+            カール・フィリップ・エマヌエル・バッハ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/cherubini.html">
+            ケルビーニ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/viotti.html">
+            ジョヴァンニ・バッティスタ・ヴィオッティ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/charles_ives.html">
+            チャールズ・アイヴズ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/myaskovsky.html">
+            ニコライ・ミャスコフスキー
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/mascagni.html">
+            ピエトロ・マスカーニ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/dukas.html">
+            ポール・デュカス
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/scriabin.html">
+            アレクサンドル・スクリャービン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/anton_rubinstein.html">
+            アントン・ルビンシテイン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/nielsen.html">
+            カール・ニールセン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/donizetti.html">
+            ガエターノ・ドニゼッティ
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/francois_couperin.html">
+            フランソワ・クープラン
+          </a>
+        </li>
+        <li class="composer-item">
+          <a href="pages/composers/franz_schmidt.html">
+            フランツ・シュミット
+          </a>
+        </li>
+        </ul>
+
+        <p class="composer-back-to-top">
+          <a href="#page-top">↑ ページ上部へ戻る</a>
+        </p>
       </div>
     </section>
 
     <section class="source-note">
-      <div class="shell">
-        <p>音源の再生はBlueSkyLabel本体で行います。</p>
+      <div class="shell narrow">
+        <p>
+          音源の再生はBlue Sky Label本体で行います。
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="shell">
-      <p>非営利の案内ページです。</p>
+      <p>
+        クラシック音源と楽譜への道筋を整理する、
+        非営利の案内ページです。
+      </p>
     </div>
   </footer>
 </body>
