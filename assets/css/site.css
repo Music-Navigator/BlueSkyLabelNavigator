@@ -41,10 +41,19 @@ button, input { font: inherit; }
 
 .header-inner {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 64px;
-  gap: 1.5rem;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-block: 0.5rem;
+}
+
+.site-description {
+  font-family: Georgia, "Yu Mincho", serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+.site-description a {
+  text-decoration: none;
 }
 
 .site-title {
