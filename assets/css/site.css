@@ -630,3 +630,34 @@ h1 {
 }
 
 /* WORK PAGE RECORDINGS: END */
+
+/* --------------------------------------------------
+   SITE HEADER RESPONSIVE LAYOUT
+-------------------------------------------------- */
+
+.site-title {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    display: block;
+    padding-block: 0.65rem;
+  }
+
+  .site-title {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .site-description {
+    display: block;
+    margin-top: 0.15rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+}
+
+/* SITE HEADER RESPONSIVE LAYOUT: END */
