@@ -16,6 +16,9 @@
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/composers/albeniz.html</loc>
   </url>
   <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/composers/albinoni.html</loc>
+  </url>
+  <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/composers/anton_rubinstein.html</loc>
   </url>
   <url>
@@ -235,6 +238,9 @@
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/composers/puccini.html</loc>
   </url>
   <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/composers/purcell.html</loc>
+  </url>
+  <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/composers/rachmaninoff.html</loc>
   </url>
   <url>
@@ -356,6 +362,12 @@
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/albeniz-9ddd4bbaea19.html</loc>
+  </url>
+  <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/albinoni-24cb279a24e6.html</loc>
+  </url>
+  <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/albinoni-efdd2fe4c7d2.html</loc>
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/anton_rubinstein-c7f5f8ccdf6f.html</loc>
@@ -596,6 +608,9 @@
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/beethoven-40006bbf5dab.html</loc>
+  </url>
+  <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/beethoven-40970d2ffe23.html</loc>
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/beethoven-41a616c68e83.html</loc>
@@ -1702,6 +1717,9 @@
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/delius-69d35e124aa0.html</loc>
   </url>
   <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/delius-85e37998010e.html</loc>
+  </url>
+  <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/delius-a31e58383847.html</loc>
   </url>
   <url>
@@ -2443,6 +2461,9 @@
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/haydn-4144881584bf.html</loc>
   </url>
   <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/haydn-41e4847671c6.html</loc>
+  </url>
+  <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/haydn-428c40695e73.html</loc>
   </url>
   <url>
@@ -2719,6 +2740,9 @@
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/hindemith-0865cd0e8de8.html</loc>
   </url>
   <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/hindemith-1f084be8e0aa.html</loc>
+  </url>
+  <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/hindemith-6cce55846a11.html</loc>
   </url>
   <url>
@@ -2726,6 +2750,9 @@
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/hindemith-d3afd1374126.html</loc>
+  </url>
+  <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/holst-329d2a1004fe.html</loc>
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/holst-666c45541d6b.html</loc>
@@ -2999,6 +3026,9 @@
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/johann_sebastian_bach-61ef203ad9a9.html</loc>
+  </url>
+  <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/johann_sebastian_bach-629f5edb92f9.html</loc>
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/johann_sebastian_bach-631096d06127.html</loc>
@@ -3659,6 +3689,9 @@
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/mendelssohn-20e6bb7c3f08.html</loc>
+  </url>
+  <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/mendelssohn-23a5d8eda7d5.html</loc>
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/mendelssohn-2b434b851f78.html</loc>
@@ -4589,6 +4622,12 @@
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/puccini-827f50d3f1dd.html</loc>
+  </url>
+  <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/purcell-c57a6348fd9d.html</loc>
+  </url>
+  <url>
+    <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/purcell-f93b589b337d.html</loc>
   </url>
   <url>
     <loc>https://music-navigator.github.io/BlueSkyLabelNavigator/pages/works/rachmaninoff-2606358b16b5.html</loc>
