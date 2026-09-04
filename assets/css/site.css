@@ -107,7 +107,10 @@ h1 {
   outline: none;
 }
 
-.search-form input::placeholder { color: #8d8e88; }
+.search-form input::placeholder {
+  color: #8d8e88;
+  font-size: 0.9rem;
+}
 
 .search-form button {
   padding: 1rem 0 1rem 1.5rem;
